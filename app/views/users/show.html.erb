@@ -1,0 +1,28 @@
+<head>
+  <title><%= t("user.title")%></title>
+  <link rel="stylesheet" href="application.css">
+</head>
+
+<% if current_user %>
+  <table>
+
+    <tr>
+      <th><%= t("user.email")%></th>
+      <th><%= t("user.password")%></th>
+    </tr>
+
+    <tr>
+      <td><%= @user.email %></td>
+      <td><%= @user.password %></td>
+    </tr>
+
+  </table>
+
+  <%= link_to(t("user.edit"), edit_user_path(@user)) %> |
+  <%= link_to(t("main.home"), root_path) %>
+
+<% end %>
+
+
+
+

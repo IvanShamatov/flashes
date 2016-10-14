@@ -1,0 +1,28 @@
+<h1><%= t("card.new")%></h1>
+
+<%= form_for @card do |f| %>
+    <p>
+      <%= f.label I18n.t("card.original") %><br>
+      <%= f.text_field :original_text %>
+    </p>
+
+    <p>
+      <%= f.label I18n.t("card.translate") %><br>
+      <%= f.text_field :translated_text %>
+    </p>
+
+    <p>
+      <%= f.file_field :avatar %>
+    </p>
+
+    <p>
+      <%= f.label I18n.t("card.review") %><br>
+      <%= f.date_field :review_date, value: Date.current %>
+    </p>
+
+    <div class="actions">
+      <%= f.submit "OK", class: 'btn btn-primary' %>
+          </div>
+
+      <% end %>
+          <%= link_to(t("button.back"), cards_path )%>
